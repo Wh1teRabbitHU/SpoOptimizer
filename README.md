@@ -3,6 +3,8 @@
 It's a micro service application using spring boot. It has an endpoint that calculates and optimizes the ideal amount
 of skilled workers based on the capacity of the given rooms and the skill levels capacity size.
 
+[Javadocs](https://wh1terabbithu.github.io/SpoOptimizer/)
+
 ## How to run the web server?
 
 ### From IDE:
