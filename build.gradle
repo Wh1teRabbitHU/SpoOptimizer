@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.0.4.RELEASE'
+}
+
+apply plugin: 'java'
+
+group 'hu.tamasruszka.spo'
+version '0.0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+ext {
+    // Spring boot
+    springBootVersion = '2.0.4.RELEASE'
+
+    // HTTP Client for testing endpoints
+    httpClientVersion = "4.5.7"
+
+    // Test
+    junitVersion = "4.12"
+}
+
+dependencies {
+    compile(
+            // Spring boot
+            "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}"
+    )
+
+    testCompile(
+            // Spring boot
+            "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
+
+            // HTTP Client
+            "org.apache.httpcomponents:httpclient:${httpClientVersion}"
+    )
+}
+
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging' // Duplication cause errors
+    }
+}
+
+springBoot {
+    mainClassName = 'hu.tamasruszka.spo.optimizer.Application'
+}
