@@ -1,0 +1,5 @@
+hu.tamasruszka.spo.optimizer
+hu.tamasruszka.spo.optimizer.configuration
+hu.tamasruszka.spo.optimizer.controller
+hu.tamasruszka.spo.optimizer.model
+hu.tamasruszka.spo.optimizer.service
